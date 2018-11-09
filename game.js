@@ -349,7 +349,6 @@ let gameObject = {
 
             this.draw()
         },
- 
         update() { // runs per tick (fastest computer can run)
             if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
                 this.player.setVelocityY(-160)

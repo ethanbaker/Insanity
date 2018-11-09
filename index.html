@@ -4,6 +4,16 @@
         <title>Insanity</title>
     </head>
     <body style="background-color: black;">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129027038-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-129027038-1');
+        </script>
+
         <div id=deathCounter style="position:relative; color:white; font-size:100px; float: right;">Deaths: 0</div>
         <button onclick="resetStorage(); save()" style="color: black; background-color: white;">Reset</button>
         <script src="phaser.min.js"></script>
