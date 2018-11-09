@@ -1,3 +1,6 @@
+//Copyright 2018 Ethan Baker. All rights reserved.
+//Email ethandbaker01@gmail.com for additional rights.
+
 let defaultInfo = () => JSON.parse(JSON.stringify({
     deaths: 0,
     levelIndex: 0
@@ -344,29 +347,7 @@ let gameObject = {
             let collect = this.sound.add('collect')
             let die = this.sound.add('die')
 
-            for (let i = 0; i < levels[info.levelIndex].length; i++) {
-                for (let j = 0; j < levels[info.levelIndex][i].length; j++) {
-            
-                    // Create a wall and add it to the 'walls' group
-                    if (levels[info.levelIndex][i][j] == 'x') {
-                        let wall = this.add.sprite(30+16*j, 30+16*i, 'wall');
-                        this.walls.add(wall);
-                        wall.immovable = true; 
-                    }
-            
-                    // Create a coin and add it to the 'coins' group
-                    else if (levels[info.levelIndex][i][j] == 'o') {
-                        let coinItem = this.add.sprite(30+16*j, 30+16*i, 'coin');
-                        this.coins.add(coinItem);
-                    }
-            
-                    // Create a lava space and add it to the 'lavas' group
-                    else if (levels[info.levelIndex][i][j] == '!') {
-                        let lavaItem = this.add.sprite(30+16*j, 30+16*i, 'lava');
-                        this.lavas.add(lavaItem);
-                    }
-                }
-            } 
+            this.draw()
         },
  
         update() { // runs per tick (fastest computer can run)
@@ -420,6 +401,31 @@ let gameObject = {
                     collected = false
                 }
             },
+            draw() {
+                for (let i = 0; i < levels[info.levelIndex].length; i++) {
+                    for (let j = 0; j < levels[info.levelIndex][i].length; j++) {
+                
+                        // Create a wall and add it to the 'walls' group
+                        if (levels[info.levelIndex][i][j] == 'x') {
+                            let wall = this.add.sprite(30+16*j, 30+16*i, 'wall');
+                            this.walls.add(wall);
+                            wall.immovable = true; 
+                        }
+                
+                        // Create a coin and add it to the 'coins' group
+                        else if (levels[info.levelIndex][i][j] == 'o') {
+                            let coinItem = this.add.sprite(30+16*j, 30+16*i, 'coin');
+                            this.coins.add(coinItem);
+                        }
+                
+                        // Create a lava space and add it to the 'lavas' group
+                        else if (levels[info.levelIndex][i][j] == '!') {
+                            let lavaItem = this.add.sprite(30+16*j, 30+16*i, 'lava');
+                            this.lavas.add(lavaItem);
+                        }
+                    }
+                }
+            } 
         }
     }
 }
