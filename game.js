@@ -238,15 +238,26 @@ let levels = [
         'xxxxxxxxxxxxxxx!!!!!!!!xxxxxxxxxxxxxxx!!!!!!!x', 
     ],
     [
-        
+       '', 
+       '', 
+       '', 
+       '', 
+       '', 
+       '', 
+       '', 
+       'ooo', 
+       'xxxxxxxxxxxx', 
     ],
     [
-
+        '',
+        '',
+        '',
+        '',
+        '',
+        'ooo',
+        'xxxxxxxxxxx',
     ],
     [
-
-    ],
-    [
         'x                                         x',
         'x                                         x',
         'x                                         x',
@@ -266,6 +277,10 @@ let levels = [
         'x                                         x',
         'x                                         x',
         'x                                         x',
+        'x                                         x',
+        'x                                         x',
+        'x ooo                                     x',
+        'xxxxx                                     x',
     ],
     [
         'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
@@ -313,7 +328,7 @@ let gameObject = {
     },
     scene: {
         preload() { // preload: function () {}
-            alert('You are the green square, trying to collect all of the yellow coins. Don\' touch the lava, as you\'ll die. Use the arrow keys to move and the space bar to jump. Good luck!')
+            alert('To play the game, you must be on PC! You are the green square, trying to collect all of the yellow coins. Don\' touch the lava, as you\'ll die. Use the arrow keys to move and the space bar to jump. Good luck!')
             loadLocalStorage()
             this.load.image('bg', './assets/blue-background.png') // loads the sprites before the game starts to avoid lag
             this.load.image('player1', './assets/green-square.png')
