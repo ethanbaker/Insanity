@@ -313,7 +313,7 @@ let gameObject = {
     },
     scene: {
         preload() { // preload: function () {}
-            alert('You are the green square, trying to collect all of the yellow coins. Don\' touch the lava, as you\'ll die. Good luck!')
+            alert('You are the green square, trying to collect all of the yellow coins. Don\' touch the lava, as you\'ll die. Use the arrow keys to move and the space bar to jump. Good luck!')
             loadLocalStorage()
             this.load.image('bg', './assets/blue-background.png') // loads the sprites before the game starts to avoid lag
             this.load.image('player1', './assets/green-square.png')
