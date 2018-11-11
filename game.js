@@ -353,7 +353,6 @@ let gameObject = {
             //this.player.setBounce(1)
 
             this.cursors = this.input.keyboard.createCursorKeys()
-            console.log(this.cursors)
             this.walls = this.physics.add.staticGroup();
             this.coins = this.physics.add.staticGroup();
             this.lavas = this.physics.add.staticGroup();
@@ -378,7 +377,9 @@ let gameObject = {
                 this.player.setVelocityX(0)
             }
             if (this.cursors.shift.isDown) {
+                console.log('1')
                 if (this.cursors.space.isDown && this.cursors.left.isDown && this.cursors.right.isDown) {
+                console.log('2')
                     pType = 'player3' 
                 } else {
                     pType = 'player2'
