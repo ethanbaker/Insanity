@@ -369,7 +369,7 @@ let gameObject = {
         update() { // runs per tick (fastest computer can run)
             if (this.cursors.shift.isDown) {
                 console.log('1')
-                if (this.cursors.space.isDown && this.cursors.left.isDown && this.cursors.right.isDown) {
+                if (this.cursors.space.isDown) {
                 console.log('2')
                     pType = 'player3' 
                 } else {
