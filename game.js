@@ -367,15 +367,6 @@ let gameObject = {
             this.draw()
         },
         update() { // runs per tick (fastest computer can run)
-            if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
-                this.player.setVelocityY(-160)
-            } else if (this.cursors.left.isDown) { //if the cursor (input) key is down, the player will move left (-x direction)
-                this.player.setVelocityX(-160)
-            } else if (this.cursors.right.isDown) {
-                this.player.setVelocityX(160)
-            } else {
-                this.player.setVelocityX(0)
-            }
             if (this.cursors.shift.isDown) {
                 console.log('1')
                 if (this.cursors.space.isDown && this.cursors.left.isDown && this.cursors.right.isDown) {
@@ -384,6 +375,15 @@ let gameObject = {
                 } else {
                     pType = 'player2'
                 }
+            }
+            if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
+                this.player.setVelocityY(-160)
+            } else if (this.cursors.left.isDown) { //if the cursor (input) key is down, the player will move left (-x direction)
+                this.player.setVelocityX(-160)
+            } else if (this.cursors.right.isDown) {
+                this.player.setVelocityX(160)
+            } else {
+                this.player.setVelocityX(0)
             }
             if (score === 3) {
                 info.levelIndex += 1
