@@ -352,6 +352,7 @@ let gameObject = {
             //this.player.setBounce(1)
 
             this.cursors = this.input.keyboard.createCursorKeys()
+            console.log(this.cursors)
             this.walls = this.physics.add.staticGroup();
             this.coins = this.physics.add.staticGroup();
             this.lavas = this.physics.add.staticGroup();
