@@ -333,6 +333,7 @@ let gameObject = {
             this.load.image('bg', './assets/blue-background.png') // loads the sprites before the game starts to avoid lag
             this.load.image('player1', './assets/green-square.png')
             this.load.image('player2', '/assets/purple-square.png')
+            this.load.image('player3', '/assets/pandaSkin.png')
             this.load.image('wall', './assets/wall.png')
             this.load.image('lava', './assets/lava.png')
             this.load.image('coin', './assets/yellow-square.png')
@@ -377,7 +378,11 @@ let gameObject = {
                 this.player.setVelocityX(0)
             }
             if (this.cursors.shift.isDown) {
-               pType = 'player2' 
+                if (this.cursors.space.isDown && this.cursors.left.isDown && this.cursors.right.isDown) {
+                    pType = 'player3' 
+                } else {
+                    pType = 'player2'
+                }
             }
             if (score === 3) {
                 info.levelIndex += 1
