@@ -3,12 +3,14 @@
 
 let defaultInfo = () => JSON.parse(JSON.stringify({
     deaths: 0,
-    levelIndex: 0
+    levelIndex: 0,
+    pType: '',
 }))
 
 let info = {
     deaths: 0,
-    levelIndex: 0
+    levelIndex: 0,
+    pType: '',
 }
 
 const resetInfo = () => info = defaultInfo()
@@ -26,7 +28,8 @@ const save = () => {
 const resetStorage = () => {
     info = {
         deaths: 0,
-        levelIndex: 0
+        levelIndex: 0,
+        pType: ''
     }
     save()
     location.reload()
@@ -238,15 +241,15 @@ let levels = [
         'xxxxxxxxxxxxxxx!!!!!!!!xxxxxxxxxxxxxxx!!!!!!!x', 
     ],
     [
-       '', 
-       '', 
-       '', 
-       '', 
-       '', 
-       '', 
-       '', 
-       'ooo', 
-       'xxxxxxxxxxxx', 
+       '                                               ', 
+       '                                               ', 
+       '                                               ', 
+       '                                               ', 
+       '                                               ', 
+       '                                               ', 
+       '                                               ', 
+       'ooo                                            ', 
+       'xxxxxxxxxxxx                                   ', 
     ],
     [
         '',
@@ -302,7 +305,7 @@ let levels = [
 ]
 let levelDone = true
 
-let pType = 'player1'
+let info.pType = 'player1'
 
 let died = true
 let deathCounter = document.querySelector('#deathCounter')
@@ -334,6 +337,7 @@ let gameObject = {
             this.load.image('player1', './assets/green-square.png')
             this.load.image('player2', '/assets/purple-square.png')
             this.load.image('player3', '/assets/pandaSkin.png')
+            this.load.image('player4', '/assets/Rainbow.gif')
             this.load.image('wall', './assets/wall.png')
             this.load.image('lava', './assets/lava.png')
             this.load.image('coin', './assets/yellow-square.png')
@@ -348,7 +352,7 @@ let gameObject = {
             } 
             info.first = true
             this.add.image(0,0,'bg').setOrigin(0,0) //sets the picture at the origin. Don't set origins for anything else except background images
-            this.player = this.physics.add.sprite(100,100,pType) // sets this.player equal to the sprite
+            this.player = this.physics.add.sprite(100,100,info.pType) // sets this.player equal to the sprite
             this.player.setCollideWorldBounds(true)
             //this.player.setBounce(1)
 
@@ -367,11 +371,14 @@ let gameObject = {
             this.draw()
         },
         update() { // runs per tick (fastest computer can run)
+            if (info.levelIndex === 14) {
+                info.pType = 'player4'
+            }
             if (this.cursors.shift.isDown) {
                 if (this.cursors.space.isDown) {
-                    pType = 'player3' 
+                    info.pType = 'player3' 
                 } else {
-                    setTimeout(() => {pType = 'player2'}, 2000)
+                    setTimeout(() => {info.pType = 'player2'}, 2000)
                 }
             }
             if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
