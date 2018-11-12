@@ -4,13 +4,13 @@
 let defaultInfo = () => JSON.parse(JSON.stringify({
     deaths: 0,
     levelIndex: 0,
-    pType: '',
+    pType: 'player1',
 }))
 
 let info = {
     deaths: 0,
     levelIndex: 0,
-    pType: '',
+    pType: 'player1',
 }
 
 const resetInfo = () => info = defaultInfo()
@@ -29,7 +29,7 @@ const resetStorage = () => {
     info = {
         deaths: 0,
         levelIndex: 0,
-        pType: ''
+        pType: 'player1'
     }
     save()
     location.reload()
@@ -241,15 +241,37 @@ let levels = [
         'xxxxxxxxxxxxxxx!!!!!!!!xxxxxxxxxxxxxxx!!!!!!!x', 
     ],
     [
-       '                                               ', 
-       '                                               ', 
-       '                                               ', 
-       '                                               ', 
-       '                                               ', 
-       '                                               ', 
-       '                                               ', 
-       'ooo                                            ', 
-       'xxxxxxxxxxxx                                   ', 
+       'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', 
+       'x                                                ', 
+       'x                                                ', 
+       'x                                                ', 
+       'x                                                ', 
+       'x                                                ', 
+       'x                                                ', 
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ',
+       'x                                                ', 
+       'xxxxxxxxxxxx                                     ', 
     ],
     [
         '',
@@ -304,8 +326,6 @@ let levels = [
     ],
 ]
 let levelDone = true
-
-let info.pType = 'player1'
 
 let died = true
 let deathCounter = document.querySelector('#deathCounter')
