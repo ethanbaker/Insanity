@@ -201,7 +201,7 @@ let levels = [
         'x           x         xx    !!!!!!x          x',
         'x           x  !   x   x     !!!!!x     x    x',
         'x           x          x!     !!!!xx         x',
-        'x      xx  x    x     x!!     !!!x          x',
+        'x      xx   x    x     x!!     !!!x          x',
         'xxxxxxxxx   x         !x!!!     !!x   x     xx',
         'x!!!!!!!!  !x      x   x!!!!     !x!         x',
         'x!!!!!!!!  !x       !  x!!!!!     !     x    x',
