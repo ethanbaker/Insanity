@@ -242,8 +242,8 @@ let levels = [
     ],
     [
        'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', 
-       'x        !      !        !                    ', 
-       'x        !                                    ', 
+       'x        !      !        x                    ', 
+       'x        !                    !               ', 
        'x               o        x    !               ', 
        'x                             !               ', 
        'x       !       !        x    !               ', 
