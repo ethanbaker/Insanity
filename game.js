@@ -186,8 +186,8 @@ let levels = [
         'x                               !!!!!!!!!!x',
         'xxxxxxxxx            o           !!!!!!!!!x',
         'x!!!!!!!!                       o!!!!!!!!!x',
-        'x!!!!!!!!         !!    !!!!!!!!!!!!!!!!!!x',
-        'x!!!!!!!!        !!    !!!!!!!!!!!!!!!!!!!x',
+        'x!!!!!!!!!!!!!!!!!!!    !!!!!!!!!!!!!!!!!!x',
+        'x!!!!!!!!!!!!!!!!!!    !!!!!!!!!!!!!!!!!!!x',
         'x!!!!!!!!               !!!!!!!!!!!!!!!!!!x',
         'x!!!!!!!!               !!!!!!!!!!!!!!!!!!x',
         'x!!!!!!!!         o     !!!!!!!!!!!!!!!!!!x',
@@ -201,8 +201,8 @@ let levels = [
         'x           x         xx    !!!!!!x          x',
         'x           x  !   x   x     !!!!!x     x    x',
         'x           x          x!     !!!!xx         x',
-        'x      x!   x    x     x!!     !!!x          x',
-        'xxxxxxxx!   x         !x!!!     !!x   x     xx',
+        'x      xx  x    x     x!!     !!!x          x',
+        'xxxxxxxxx   x         !x!!!     !!x   x     xx',
         'x!!!!!!!!  !x      x   x!!!!     !x!         x',
         'x!!!!!!!!  !x       !  x!!!!!     !     x    x',
         'x!!!!!!!   !x  x       x!!!!!!    !         !x',
@@ -368,12 +368,10 @@ let gameObject = {
         },
         update() { // runs per tick (fastest computer can run)
             if (this.cursors.shift.isDown) {
-                console.log('1')
                 if (this.cursors.space.isDown) {
-                console.log('2')
                     pType = 'player3' 
                 } else {
-                    pType = 'player2'
+                    setTimeout(() => {pType = 'player2'}, 2000)
                 }
             }
             if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
