@@ -451,9 +451,11 @@ let gameObject = {
 }
 
 //for Mrs Houlihan
-let d = new Date()
-if ((d.getDay() !== 0 || d.getDay() !== 6) && (d.getHours() >= 12 && d.getMinutes() >= 52) && (d.getHours() <= 1 && d.getMinutes() <= 32)) {
-    deathCounter.innerText = 'Mrs. Houlihan said no...'
-} else {
-    let game = new Phaser.Game(gameObject)
-}
+//let d = new Date()
+//if ((d.getDay() !== 0 || d.getDay() !== 6) && (d.getHours() >= 12 && d.getMinutes() >= 52) && (d.getHours() <= 1 && d.getMinutes() <= 32)) {
+//    deathCounter.innerText = 'Mrs. Houlihan said no...'
+//} else {
+//    let game = new Phaser.Game(gameObject)
+//}
+
+let game = new Phaser.Game(gameObject)
