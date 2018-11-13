@@ -4,7 +4,6 @@
 let defaultInfo = () => JSON.parse(JSON.stringify({
     deaths: 0,
     levelIndex: 0,
-    pType: info.pType,
 }))
 
 let info = {
@@ -26,11 +25,9 @@ const save = () => {
 }
 
 const resetStorage = () => {
-    let filler = info.pType
     info = {
         deaths: 0,
         levelIndex: 0,
-        pType: filler,
     }
     save()
     location.reload()
