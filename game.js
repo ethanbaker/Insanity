@@ -358,7 +358,7 @@ let gameObject = {
             this.load.image('player1', './assets/green-square.png')
             this.load.image('player2', '/assets/purple-square.png')
             this.load.image('player3', '/assets/pandaSkin.png')
-            this.load.image('player4', '/assets/rainbow.png', 16, 16)
+            //this.load.spritesheet('player4', './assets/rainbow.png', null, 16, 16, 10)
             this.load.image('wall', './assets/wall.png')
             this.load.image('lava', './assets/lava.png')
             this.load.image('coin', './assets/yellow-square.png')
@@ -374,9 +374,14 @@ let gameObject = {
             info.first = true
             this.add.image(0,0,'bg').setOrigin(0,0) //sets the picture at the origin. Don't set origins for anything else except background images
             this.player = this.physics.add.sprite(100,100,info.pType) // sets this.player equal to the sprite
-            if (info.pType === 'player4') {
+            if (info.pType === 'player5') {
                 this.player.frame = 0
-                this.player.animations.add('anim', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 10, true)
+                this.anims.create({
+                    key: 'anim', 
+                    frames: this.anims.generateFrameNumbers('player4', { start: 0, end: 10 }),
+                    frameRate: 10, 
+                    repeat: true,
+                })
             }
             this.player.setCollideWorldBounds(true)
             //this.player.setBounce(1)
@@ -397,7 +402,7 @@ let gameObject = {
         },
         update() { // runs per tick (fastest computer can run)
             if (info.pType === 'player4') {
-                this.player.animations.play('anim')
+                //this.player.anims.play('anim')
             }
             if (info.levelIndex === 13) {
                 info.pType = 'player4'
