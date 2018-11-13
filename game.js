@@ -404,7 +404,7 @@ let gameObject = {
                 if (this.cursors.space.isDown) {
                     info.pType = 'player3' 
                 } else {
-                    setTimeout(() => {info.pType = 'player2'}, 2000)
+                    setTimeout(() => {info.pType = 'player2'}, 4000)
                 }
             }
             if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
