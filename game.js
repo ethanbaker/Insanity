@@ -270,7 +270,7 @@ let levels = [
        'x                                             ',
        'x                                             ',
        'x                                             ',
-       'x                                             ',
+       'x         oo                                  ',
        'xxxxxxxxxxxx                                  ', 
     ],
     [
