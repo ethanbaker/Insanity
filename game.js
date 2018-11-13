@@ -398,15 +398,6 @@ let gameObject = {
             this.draw()
         },
         update() { // runs per tick (fastest computer can run)
-            if (info.pType === 'player4') {
-                this.anims.create({
-                    key: 'rainbow1',
-                    frames: this.anims.generateFrameNumbers('player4', {start: 0, end: 9, first: 9}),
-                    framerate: 10,
-                    repeat: -1,
-                })
-                this.player.play('rainbow1')
-            }
             if (info.levelIndex === 13) {
                 info.pType = 'player4'
             }
