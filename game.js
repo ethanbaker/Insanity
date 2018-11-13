@@ -4,6 +4,7 @@
 let defaultInfo = () => JSON.parse(JSON.stringify({
     deaths: 0,
     levelIndex: 0,
+    pType: 'player1'
 }))
 
 let info = {
@@ -28,6 +29,7 @@ const resetStorage = () => {
     info = {
         deaths: 0,
         levelIndex: 0,
+        pType: 'player1'
     }
     save()
     location.reload()
@@ -398,9 +400,6 @@ let gameObject = {
             this.draw()
         },
         update() { // runs per tick (fastest computer can run)
-            if (info.levelIndex === 13) {
-                info.pType = 'player4'
-            }
             if (this.cursors.shift.isDown) {
                 if (this.cursors.space.isDown) {
                     info.pType = 'player3' 
