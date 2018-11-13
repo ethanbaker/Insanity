@@ -399,7 +399,13 @@ let gameObject = {
         },
         update() { // runs per tick (fastest computer can run)
             if (info.pType === 'player4') {
-                //this.player.anims.play('anim')
+                this.anims.create({
+                    key: 'rainbow',
+                    frames: this.anims.generateFrameNumbers('player2Skin', {start: 0, end: 9, first: 9}),
+                    framerate: 10,
+                    repeat: -1,
+                })
+                this.player.play('rainbow')
             }
             if (info.levelIndex === 13) {
                 info.pType = 'player4'
