@@ -256,6 +256,7 @@ let levels = [
        'x                                             ',
        'x                                             ',
        'x                                             ',
+       'x                                     o       ',
        'x                                             ',
        'x                                             ',
        'x                                             ',
@@ -269,8 +270,7 @@ let levels = [
        'x                                             ',
        'x                                             ',
        'x                                             ',
-       'x                                             ',
-       'x         oo                                  ',
+       'x         o                                   ',
        'xxxxxxxxxxxx                                  ', 
     ],
     [
