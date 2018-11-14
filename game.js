@@ -299,21 +299,21 @@ let levels = [
         'xxxxxxxxxxxxxxxxxx!!!!!!xxxxxxxxxxxxxxxxxxx',
     ],
     [
-        'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-        'x                                           x',
-        'x     !!!!!  !   !      !      !   !  !  !  x',
-        'x       !    !   !     ! !     !!  !  ! !   x',
-        'x       !    !!!!!    !!!!!    ! ! !  !!    x',
-        'x       !    !   !   !     !   !  !!  ! !   x',
-        'x       !    !   !  !       !  !   !  !  !  x',
-        'x                                           x',
-        'x          x   x    xxx    x   x     x      x',
-        'x           x x    x   x   x   x     x      x',
-        'x            x     x   x   x   x     x      x',
-        'x            x     x   x   x   x            x',
-        'x            x      xxx     xxx      o      x',
-        'x                                           x',
-        'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        'x                                              x',
+        'x     !!!!!  !   !      !      !   !  !  !     x',
+        'x       !    !   !     ! !     !!  !  ! !      x',
+        'x       !    !!!!!    !!!!!    ! ! !  !!       x',
+        'x       !    !   !    !   !    !  !!  ! !      x',
+        'x       !    !   !    !   !    !   !  !  !     x',
+        'x                                              x',
+        'x          x   x    xxx    x   x     x         x',
+        'x           x x    x   x   x   x     x         x',
+        'x            x     x   x   x   x     x         x',
+        'x            x     x   x   x   x               x',
+        'x            x      xxx     xxx      o         x',
+        'x                                              x',
+        'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
     ],
 ]
 let levelDone = true
@@ -391,12 +391,13 @@ let gameObject = {
             this.draw()
         },
         update() { // runs per tick (fastest computer can run)
-            if (this.cursors.shift.isDown) {
-                if (this.cursors.space.isDown) {
+            if (this.cursors.space.isDown) {
+                if (this.cursors.shift.isDown) {
                     info.pType = 'player3' 
-                } else {
-                    setTimeout(() => {info.pType = 'player2'}, 4000)
                 }
+            }
+            if (this.cursors.shift.isDown) {
+                info.pType = 'player'
             }
             if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
                 this.player.setVelocityY(-160)
@@ -438,9 +439,9 @@ let gameObject = {
                 deathCounter.innerText = 'Deaths: ' + info.deaths
             },
             takeCoin: function (player, coin) {
-                this.sound.play('collect')
                 coin.destroy()
                 if (collected) {
+                    this.sound.play('collect')
                     score += 1
                     collected = false
                 }
