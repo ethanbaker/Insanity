@@ -220,21 +220,21 @@ let levels = [
         'xxxxxxxxxxxxxxx!!!!!!!!xxxxxxxxxxxxxxx!!!!!!!x',
     ],
     [
-        'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        '   xxxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxx',
         'x           x                     x         ox',
         'x           x           xxxxxx  xxx!!!!!!x   x',
-        'x           x          x!!!!!!  !!x          x',
+        'xx          x          x!!!!!!  !!x          x',
         'x           x          x!!!!!!  !!x      x   x',
         'x      x!   x        x x!!!!!!  !!x          x',
         'xxxxxxxx!   x       x  x!!!!!!  !!x      x!!!x',
         'x!!!!!!!!  !x          x!!!!!   !!x          x',
-        'x!!!!!!!!  !x  x       x!!!!!   !!!!!!!!!x   x',
-        'x!!!!!!!   !x     !    x!!!!!  !!!!          x',
-        'x!!!!!!!   !x      x   x!!!!!  !!!!      x!!!x',
-        'x!!!!!!!  !!x          x!!!!!  !!!x          x',
-        'x!!!!!!!  !!x         xx!!!!!  !!!x      x   x',
-        'x!!!!!!!   !x          x!!!!!  !!!x          x',
-        'x!!!!!!!   !x!!!      xx!!!!!   !!x!!!!!!x   x',
+        'x!!!!!!!!  !x  x       x!!!!!   !!!!!!x!!x   x',
+        'x!!!!!!!   !x     !    x!!!!!   !!!          x',
+        'x!!!!!!!   !x      x   x!!!!!   !!!     xx!!xx',
+        'x!!!!!!!  !!x          x!!!!!   !!x          x',
+        'x!!!!!!!  !!x         xx!!!!!   !!xx     x   x',
+        'x!!!!!!!   !x          x!!!!!   !!x          x',
+        'x!!!!!!!   !x!!!      xx!!!!!   !!x!x!!!!x   x',
         'x!!!!!!!!   x          !!!!!!    !x          x',
         'x!!!!!!!!!  x    x     !!!!!!!   !x      x   x',
         'xo                     x         o           x',
@@ -397,7 +397,7 @@ let gameObject = {
                 }
             }
             if (this.cursors.shift.isDown) {
-                info.pType = 'player'
+                info.pType = 'player2'
             }
             if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
                 this.player.setVelocityY(-160)
