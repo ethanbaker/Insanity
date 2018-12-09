@@ -329,6 +329,9 @@ let collected = true
 let die;
 let collect;
 
+let keyboard
+let keys = 'UP,DOWN,LEFT,RIGHT,SPACE,W,A,S,D'
+
 let gameObject = {
     width: 825, //Full screen
     height: 768, 
@@ -378,7 +381,7 @@ let gameObject = {
             this.player.setCollideWorldBounds(true)
             //this.player.setBounce(1)
 
-            this.cursors = this.input.keyboard.createCursorKeys()
+            keyboard = this.input.keyboard.addKeys(keys)
             this.walls = this.physics.add.staticGroup();
             this.coins = this.physics.add.staticGroup();
             this.lavas = this.physics.add.staticGroup();
@@ -401,11 +404,11 @@ let gameObject = {
             if (this.cursors.shift.isDown) {
                 info.pType = 'player2'
             }
-            if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
+            if ((keyboard.UP.isDown || keyboard.SPACE.isDown || keyboard.W.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
                 this.player.setVelocityY(-160)
-            } else if (this.cursors.left.isDown) { //if the cursor (input) key is down, the player will move left (-x direction)
+            } else if (keyboard.LEFT.isDown || keyboard.A.isDown) { //if the cursor (input) key is down, the player will move left (-x direction)
                 this.player.setVelocityX(-160)
-            } else if (this.cursors.right.isDown) {
+            } else if (keyboard.RIGHT.isDown || keyboard.D.isDown) {
                 this.player.setVelocityX(160)
             } else {
                 this.player.setVelocityX(0)
