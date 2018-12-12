@@ -396,14 +396,6 @@ let gameObject = {
             this.draw()
         },
         update() { // runs per tick (fastest computer can run)
-            if (this.cursors.space.isDown) {
-                if (this.cursors.shift.isDown) {
-                    info.pType = 'player3' 
-                }
-            }
-            if (this.cursors.shift.isDown) {
-                info.pType = 'player2'
-            }
             if ((keyboard.UP.isDown || keyboard.SPACE.isDown || keyboard.W.isDown) && this.player.body.touching.down === true ) { //&& (this.player.body.touching.right === false && this.player.body.touching.left === false)
                 this.player.setVelocityY(-160)
             } else if (keyboard.LEFT.isDown || keyboard.A.isDown) { //if the cursor (input) key is down, the player will move left (-x direction)
