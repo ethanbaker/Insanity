@@ -351,8 +351,6 @@ let gameObject = {
             loadLocalStorage()
             this.load.image('bg', './assets/blue-background.png') // loads the sprites before the game starts to avoid lag
             this.load.image('player1', './assets/green-square.png')
-            this.load.image('player2', '/assets/purple-square.png')
-            this.load.image('player3', '/assets/pandaSkin.png')
             this.load.spritesheet('player4', './assets/playerSkin2.png', {frameWidth: 16, frameHeight: 16, endFrame: 10})
             this.load.image('wall', './assets/wall.png')
             this.load.image('lava', './assets/lava.png')
